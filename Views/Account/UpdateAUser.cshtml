@@ -1,0 +1,56 @@
+﻿@using ChildCare.Models;
+@model UserPO
+@{
+    ViewBag.Title = "UpdateAUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div align="center">
+    <h2 class="text-center">Update A User</h2>
+    @using (Html.BeginForm("UpdateAUser", "Account", FormMethod.Post))
+
+
+    {
+        @Html.HiddenFor(model => Model.UserID)
+        <label>*</label>@Html.LabelFor(model => Model.FirstName)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.FirstName, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label> @Html.LabelFor(model => Model.LastName)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.LastName, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label> @Html.LabelFor(model => Model.UserName)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.UserName, "", new { @class = "text-danger" })
+        </div>
+       
+           
+            
+            <label>*</label> @Html.LabelFor(model => Model.Password)
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Password, "", new { @class = "text-danger" })
+            </div>
+            
+        
+
+
+        <label>*</label>@Html.LabelFor(model => Model.RoleID)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.RoleID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.RoleID, "", new { @class = "text-danger" })
+        </div>
+
+       
+        <div class="form-group">
+            <input type="submit" value="submit" />
+        </div>
+    }
+</div>
+

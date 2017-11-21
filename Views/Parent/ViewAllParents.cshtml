@@ -1,0 +1,61 @@
+﻿@using ChildCare.Models;
+@model List<ParentPO>
+@{
+    ViewBag.Title = "ViewAllParents";
+}
+
+<div>
+    <h2 class="text-center">View All Parents</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Place Of Work</th>
+                <th>Work Phone</th>
+                @if (Session["UserName"] != null)
+                {
+                    if ((Int64)Session["RoleID"] >= 2)
+                    {
+                      <th colspan="2" style="text-align: center">Actions</th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ParentPO po in Model)
+            {
+                <tr>
+                    <td>@po.FirstName</td>
+                    <td>@po.LastName</td>
+                    <td>@po.Address</td>
+                    <td>@po.Phone</td>
+                    <td>@po.PlaceOfWork</td>
+                    <td>@po.WorkPhone</td>
+                    @if (Session["UserName"] != null)
+                    {
+                        if ((Int64)Session["RoleID"] >= 2)
+                        {
+                          <td>@Html.ActionLink("Update", "UpdateAParent", "Parent", new { ParentID = po.ParentID }, null)</td>
+                        }
+                        else
+                        {
+                        }
+                        if ((Int64)Session["RoleID"] == 3)
+                        {
+                          <td>@Html.ActionLink("Delete", "DeleteAParent", "Parent", new { parentID = po.ParentID }, new { @onclick = "return ConfirmDelete()" })</td>
+                        }
+                        else
+                        {
+                        }
+                    }
+                     
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

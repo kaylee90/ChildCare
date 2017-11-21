@@ -1,0 +1,54 @@
+﻿@using ChildCare.Models;
+@model List<UserPO>
+
+@{
+    ViewBag.Title = "ViewAllUsers";
+}
+
+<div>
+<h2 class="text-center">View All Users</h2>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>RoleID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UserPO po in Model)
+            {
+            <tr>
+                <td>@po.FirstName</td>
+                <td>@po.LastName</td>
+                <td>@po.UserName</td>
+                <td>@po.Password</td>
+                <td>@po.RoleID</td>
+                @if (Session["UserName"] != null)
+                {
+                    if ((Int64)Session["RoleID"] == 3)
+                    {
+                    <td>@Html.ActionLink("Update", "UpdateAUser", "Account", new { UserID = po.UserID }, null)</td>
+                    }
+                    else
+                    {
+                    }
+                    if ((Int64)Session["RoleID"] == 3)
+                    {
+                      <td>@Html.ActionLink("Delete", "DeleteAUser", "Account", new { userID = po.UserID }, new { @onclick = "return ConfirmDelete()" })</td>
+                    }
+                }
+                else
+                {
+                }
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>

@@ -1,0 +1,31 @@
+﻿@using ChildCare.Models;
+@model LoginPO
+@{
+    ViewBag.Title = "Login";
+}
+<div input align="center">
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+
+            <label>*</label>@Html.LabelFor(model => Model.Username)
+            <div class="form-group">
+                @Html.TextBoxFor(model => Model.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Username, "", new { @class = "text-danger" })
+            </div>
+            
+            <label>*</label>@Html.LabelFor(model => Model.Password)
+            <div class="form-group">
+                @Html.PasswordFor(model => Model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Login" />
+            </div>
+        </div>
+
+    }
+       </div>
+
+    

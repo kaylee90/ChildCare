@@ -1,0 +1,56 @@
+﻿@using ChildCare.Models;
+@model ParentPO
+@{
+    ViewBag.Title = "UpdateAParent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div align="center">
+    <h2 class="text-center">Update A Parent</h2>
+    @using (Html.BeginForm("UpdateAParent", "Parent", FormMethod.Post))
+
+
+    {
+        @Html.HiddenFor(model => Model.ParentID)
+        <label>*</label>@Html.LabelFor(model => Model.FirstName)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.FirstName, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label> @Html.LabelFor(model => Model.LastName)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.LastName, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label> @Html.LabelFor(model => Model.Address)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Address, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label> @Html.LabelFor(model => Model.Phone)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.Address, "", new { @class = "text-danger" })
+        </div>
+
+        <label>*</label>@Html.LabelFor(model => Model.PlaceOfWork)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.PlaceOfWork, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => Model.PlaceOfWork, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => Model.WorkPhone)
+        <div class="form-group">
+            @Html.TextBoxFor(model => Model.WorkPhone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.WorkPhone, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="submit" />
+        </div>
+    }
+        </div>
+
+

@@ -1,0 +1,64 @@
+﻿@using ChildCare.Models;
+@model ChildPO
+@{
+    ViewBag.Title = "ViewDetailsById";
+}
+
+<h2 class="text-center" >View All Child Details</h2>
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.FirstName)
+        @Html.DisplayFor(model => Model.FirstName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.LastName)
+        @Html.DisplayFor(model => Model.LastName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Age)
+        @Html.DisplayFor(model => Model.Age)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.IsFemale)
+        @Html.DisplayFor(model => Model.IsFemale)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.IsPottyTrianed)
+        @Html.DisplayFor(model => Model.IsPottyTrianed)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Allergies)
+        @Html.DisplayFor(model => Model.Allergies)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Medicine)
+        @Html.DisplayFor(model => Model.Medicine)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.VaccinationsUpToDate)
+        @Html.DisplayFor(model => Model.VaccinationsUpToDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.EmergencyContact)
+        @Html.DisplayFor(model => Model.EmergencyContact)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.EmergencyContactPhoneNumber)
+        @Html.DisplayFor(model => Model.EmergencyContactPhoneNumber)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.AuthorizedPeopleForPickUp)
+        @Html.DisplayFor(model => Model.AuthorizedPeopleForPickUp)
+    </div>
+</div>
